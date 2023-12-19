@@ -9,20 +9,31 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:background="#151515"
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="199dp">
 
         <EditText
             android:id="@+id/editTextTask"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="579dp"
+            android:background="#1A67A5"
             android:hint="Enter Task" />
 
         <TimePicker
             android:id="@+id/timePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/editTextTask"
-            android:layout_marginTop="107dp" />
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="176dp"
+            android:amPmTextColor="#03A9F4"
+            android:background="#022949"
+            android:headerBackground="#022949"
+            android:numbersBackgroundColor="#3F51B5"
+            android:numbersSelectorColor="#2196F3" />
 
         <Button
             android:id="@+id/buttonSetReminder"
@@ -30,9 +41,29 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/timePicker"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="55dp"
-            android:layout_marginEnd="162dp"
-            android:text="Set Reminder" />
+            android:layout_marginTop="53dp"
+            android:layout_marginEnd="152dp"
+
+            android:background="#FFC107"
+            android:text="Set Reminder"
+            android:textColorHighlight="#FFC107"
+            android:textColorLink="#FF9800"
+            app:strokeColor="#FFC107" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="103dp"
+            android:layout_height="42dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="169dp"
+            android:layout_marginBottom="664dp"
+            android:text="Remind Me "
+            android:textColor="#FF9800"
+            android:textColorLink="#E6B112"
+            android:textSize="20sp" />
+
+
     </RelativeLayout>
 
 
