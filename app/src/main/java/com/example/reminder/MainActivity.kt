@@ -47,19 +47,19 @@ class MainActivity : AppCompatActivity() {
             set(Calendar.MINUTE, minute)
             set(Calendar.SECOND, 0)
         }
-
+        //val requestCode = System.currentTimeMillis().toInt()
         val intent = Intent(context, ReminderReceiver::class.java).apply {
             action = "com.example.reminder.ACTION_SET_REMINDER"
             putExtra("task", task)
         }
 
+        val requestCode = System.currentTimeMillis().toInt()
         val pendingIntent = PendingIntent.getBroadcast(
             context,
-            0,
+            requestCode,
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, pendingIntent)
     }
