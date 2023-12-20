@@ -33,7 +33,7 @@ class ReminderReceiver : BroadcastReceiver() {
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setAutoCancel(true)
 
-        // Create an explicit intent for the notification
+
         val intent = Intent(context, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         val pendingIntent = PendingIntent.getActivity(
@@ -44,7 +44,7 @@ class ReminderReceiver : BroadcastReceiver() {
 
         createNotificationChannel(context)
 
-        // Show the notification
+
         val notificationManager = NotificationManagerCompat.from(context)
         notificationManager.notify(notificationId, builder.build())
     }
@@ -59,7 +59,7 @@ class ReminderReceiver : BroadcastReceiver() {
                 description = "Channel for reminder notifications"
             }
 
-            // Register the channel with the system
+
             val notificationManager =
                 context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)

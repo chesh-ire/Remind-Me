@@ -25,8 +25,7 @@
 
 
         </activity>
-        <receiver android:name=".ReminderReceiver"
-            />
+        <receiver android:name=".ReminderReceiver" />
         <service android:name=".ReminderForegroundServices" />
 
     </application>

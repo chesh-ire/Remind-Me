@@ -24,12 +24,12 @@ class ReminderForegroundServices:Service() {
         val channelId = "channelId"
         val notificationId = 1
 
-        // Create an explicit intent for the notification
+
         val intent = Intent(this, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
 
-        // Build the notification
+
         val notification = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle("Reminder")
@@ -39,10 +39,10 @@ class ReminderForegroundServices:Service() {
             .setAutoCancel(true)
             .build()
 
-        // Create the notification channel (required for Android 8.0 and higher)
+
         createNotificationChannel()
 
-        // Show the notification
+
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(notificationId, notification)
     }
